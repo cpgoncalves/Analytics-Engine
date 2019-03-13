@@ -1,4 +1,4 @@
-# Analytics-Engine
+# Analytics Engine
 
 ON THE SOFTWARE MODULE
 
