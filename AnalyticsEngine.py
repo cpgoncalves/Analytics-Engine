@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Carlos Pedro Goncalves, March, 2019
+Carlos Pedro Gonçalves, March, 2019
 University of Lisbon
 Instituto Superior de Ciências Sociais e Politicas (ISCSP)
 
@@ -11,12 +11,9 @@ Analytics Engine:
     as part of classroom material, in the context of Statistics of Management 
     classes.
     
-Copyright (c) 2019 Carlos Pedro Gonçalves
+Copyright (c) 2019, Carlos Pedro dos Santos Gonçalves
 
-This work is licensed under the 
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. 
-To view a copy of this license, visit 
-https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+This work is licensed under the BSD 3-Clause License 
 
 @author: cpdsg
 """
