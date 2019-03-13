@@ -78,7 +78,7 @@ The anova function implements a more than two independent samples and dispersion
                          name_1, # binary counted as success
                          value_null, # value for the null hypothesis
                          profile, # two-sided, smaller, larger
-                         alpha
+                         alpha # significance level
                              )
 
 The proportions test processes a pandas variable that is dichotomic, which can contain numeric or string lables, the user provides the binary category that is counted as failure and the category that id counted as success, the null hypothesis value for the proportion and the profile for the proportions z-test "two-sided" (p=p0), "smaller" (p<p0) or "larger" (p>p0). The system automatically outputs the number of successes, the sample size, the sample proportion, the proportions z test results and the  Clopper-Pearson confidence interval for the proportion.
