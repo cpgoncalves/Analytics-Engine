@@ -22,17 +22,12 @@ statistics_quantitative(X,target_name), prints the main sample statistics along 
 
 2. One Sample Mean and Dispersion Analysis
 
-one_mean(df, # pandas dataframe
-        
-        target_name, # target variable name
-        
-        popmean, # population mean for used for null hypothesis
-        
-        alpha=0.05, # significance level
-        
-        nan='propagate' # nan policy
-        
-        )
+        one_mean(df, # pandas dataframe
+                target_name, # target variable name
+                popmean, # population mean for used for null hypothesis
+                alpha=0.05, # significance level
+                nan='propagate' # nan policy
+                )
 
 The one sample Test of mean provides the main sample statistics plus boxplot, automatically tests the normality assumption and, if the assumption holds, it provides the Bayesian confidence intervals for the mean and the standard deviation and also performs the one sample t-test for the given population mean and significance level, reading out the results for further analysis by the Business Intelligence analyst.
 
@@ -41,17 +36,11 @@ The one sample Test of mean provides the main sample statistics plus boxplot, au
 
 
         two_means_indep(df, # pandas dataframe
-                
                        target_name, # name of target variable
-                
                         binary_variable, # binary variable name
-                
                         binary_categories, # binary variable categories
-                
                         alpha = 0.05, # significance level
-                
                         nan = 'propagate' # nan policy
-                
                         )
 
 The two independent samples means and dispersion analysis functionality provides the main sample statistics plus boxplot for the two independent samples, automatically tests the normality assumption and, if the assumption holds, it provides the confidence intervals for the mean and the standard deviation of each sample and also performs the Levene's test for equality of variances and the independent samples t-test for the equality of means, the later with the p-value already adapted to the equality of variances assumption. If the normality assumption does not hold, the system automatically performs the Mann-Whitney test of equality of distributions as the nonparametric alternative.
@@ -83,40 +72,40 @@ The anova function implements a more than two independent samples and dispersion
 4. Paired Samples Means and Dispersion Analysis
 
 
-proportions_test(df, # pandas dataframe
-                 binary, # binary variable name
-                 name_0, # binary counted as failure
-                 name_1, # binary counted as success
-                 value_null, # value for the null hypothesis
-                 profile, # two-sided, smaller, larger
-                 alpha
-                     )
+        proportions_test(df, # pandas dataframe
+                         binary, # binary variable name
+                         name_0, # binary counted as failure
+                         name_1, # binary counted as success
+                         value_null, # value for the null hypothesis
+                         profile, # two-sided, smaller, larger
+                         alpha
+                             )
 
 The proportions test processes a pandas variable that is dichotomic, which can contain numeric or string lables, the user provides the binary category that is counted as failure and the category that id counted as success, the null hypothesis value for the proportion and the profile for the proportions z-test "two-sided" (p=p0), "smaller" (p<p0) or "larger" (p>p0). The system automatically outputs the number of successes, the sample size, the sample proportion, the proportions z test results and the  Clopper-Pearson confidence interval for the proportion.
 
 
 5. Linear Regression Analysis
 
-linear_regression_analysis(df, # pandas dataframe
-                           predictor_name, # name of predictor
-                           target_name # name of target
-                           )
+        linear_regression_analysis(df, # pandas dataframe
+                                   predictor_name, # name of predictor
+                                   target_name # name of target
+                                   )
 
 This is the basic linear regression for a target versus a single predictor with the dispersion plot and fitted regression line.
 
 
 6. Classification Problem
 
-classification_problem(data, # pandas dataframe
-                       predictors, # predictors name list
-                       target, # target name
-                       architecture, # machine learning architecture
-                       randomize_data=True, # data randomization
-                       training_p=0.5, # training data proportion
-                       seed=1, # seed for random number generator
-                       n_shuffles=2, # number of times to shuffle
-                       return_elements=False # return elements
-                       )
+        classification_problem(data, # pandas dataframe
+                               predictors, # predictors name list
+                               target, # target name
+                               architecture, # machine learning architecture
+                               randomize_data=True, # data randomization
+                               training_p=0.5, # training data proportion
+                               seed=1, # seed for random number generator
+                               n_shuffles=2, # number of times to shuffle
+                               return_elements=False # return elements
+                               )
 
 This is a basic function that applies machine learning to a classification problem using scikit-learn functionalities. A pandas dataframe is provided by the user, the predictor variables names list as well as the target variable name, the architecture is also provided by the user. By default the system randomizes the sample with two shuffles using the provided random number generator seed, the user can also apply a single shuffle or no randomization at all if the randomize data is set to False. The user defines the proportion of data to be used for training, with the remaining data being set aside for testing. If the option return elements is set to True (the default is False), then, the function returns the trained machine learning architecture, the training data and the test data.
 
@@ -124,15 +113,15 @@ The function outputs the total sample size, the training data size, the test dat
 
 7. Regression Problem
 
-regression_problem(data, # pandas dataframe
-                   predictors, # predictors name list
-                   target, # target name
-                   architecture, # machine learning architecture
-                   randomize_data=True, # data randomization
-                   training_p=0.5, # training data proportion
-                   seed=1, # seed for random number generator
-                   n_shuffles=2 # number of times to shuffle
-                   )
+        regression_problem(data, # pandas dataframe
+                           predictors, # predictors name list
+                           target, # target name
+                           architecture, # machine learning architecture
+                           randomize_data=True, # data randomization
+                           training_p=0.5, # training data proportion
+                           seed=1, # seed for random number generator
+                           n_shuffles=2 # number of times to shuffle
+                           )
 
 The regression problem functionality is another machine learning function that is applied analogously to the classification_problem function but for a problem of regression instead of classification. Instead of the accuracies it produces for both training and test samples the Root Mean Square Error (RMSE), the Mean Absolute Error and the Median Absolute Error.
 
