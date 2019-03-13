@@ -2,7 +2,7 @@
 
 ON THE SOFTWARE MODULE
 
-Analytics Engine is an AI-based system with data analysis automation built that works with pandas, stats, statsmodels and scikit-learn, it was  developed to work as a Business Analytics for Business Intelligence module, as part of classroom material, in the context of Statistics of Management classes.
+Analytics Engine is an AI-based system with data analysis automation that works with pandas, stats, statsmodels and scikit-learn, it was  developed to work as a Business Analytics for Business Intelligence module in Python, as part of classroom material, in the context of Statistics of Management classes.
 
 The system automates assumptions testing and, in the case of the parametric tests, it is not intended as just presenting the test but also providing descriptive and inference elements that may support the Business Intelligence analyst in his analysis and report, this includes not only automating many of the different steps that one must take to apply a parametric test but also reading out the test results given the significance level defined by the user and providing additional statistical elements that may support the analyst.
 
