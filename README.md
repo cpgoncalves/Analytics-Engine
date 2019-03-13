@@ -39,43 +39,44 @@ The one sample Test of mean provides the main sample statistics plus boxplot, au
 
 3. Two Independent Samples Means and Dispersion Analysis
 
-two_means_indep(df, # pandas dataframe
+
+        two_means_indep(df, # pandas dataframe
                 
-                target_name, # name of target variable
+                       target_name, # name of target variable
                 
-                binary_variable, # binary variable name
+                        binary_variable, # binary variable name
                 
-                binary_categories, # binary variable categories
+                        binary_categories, # binary variable categories
                 
-                alpha = 0.05, # significance level
+                        alpha = 0.05, # significance level
                 
-                nan = 'propagate' # nan policy
+                        nan = 'propagate' # nan policy
                 
-                )
+                        )
 
 The two independent samples means and dispersion analysis functionality provides the main sample statistics plus boxplot for the two independent samples, automatically tests the normality assumption and, if the assumption holds, it provides the confidence intervals for the mean and the standard deviation of each sample and also performs the Levene's test for equality of variances and the independent samples t-test for the equality of means, the later with the p-value already adapted to the equality of variances assumption. If the normality assumption does not hold, the system automatically performs the Mann-Whitney test of equality of distributions as the nonparametric alternative.
 
 
 4. Paired Samples Means and Dispersion Analysis
 
-two_means_paired(df, # pandas dataframe
-                     target_1, # name of  variable 1
-                     target_2, # name of variable 2
-                     alpha = 0.05, # significance level
-                     nan = 'propagate' # nan policy                     
-                     )
+        two_means_paired(df, # pandas dataframe
+                         target_1, # name of  variable 1
+                         target_2, # name of variable 2
+                         alpha = 0.05, # significance level
+                         nan = 'propagate' # nan policy                     
+                         )
 
 The paired samples means and dispersion analysis functionality provides the main sample statistics for two target variables plus for the difference between target variable 1 and target variable 2 (X1 - X2), automatically tests the normality assumption and, if the assumption holds, it provides the confidence intervals for the mean and the standard deviation of each variable and performs the paired samples t-test for equality of means. If the normality assumption does not hold, the system automatically performs the Wilcoxon test.
 
 5. Multiple Independent Samples Means and Dispersion Analysis
 
-anova(df, # pandas dataframe
-      target_name, # name of target variable
-      category_name, # name category used to divide the samples
-      categories_classes, # classes for category
-      alpha = 0.05, # significance
-      nan = 'propagate' # nan policy
-      )
+        anova(df, # pandas dataframe
+              target_name, # name of target variable
+              category_name, # name category used to divide the samples
+              categories_classes, # classes for category
+              alpha = 0.05, # significance
+              nan = 'propagate' # nan policy
+              )
 
 The anova function implements a more than two independent samples and dispersion analysis providing the main sample statistics for each group plus boxplot, automatically tests the normality assumption and, if the assumption holds, it provides the confidence intervals for the mean and the standard deviation of each independent sample and also performs the Levene's test for equality of variances, if the Levene's test holds, the system applies the ANOVA test of equality of means, if it does not hold it outputs both the ANOVA and the Kruskal-Wallis test for equality of distributions. If the normality assumption does not hold, the system only performs the Kruskal-Wallis test for equality of distributions test as the nonparametric alternative to the ANOVA test.
 
