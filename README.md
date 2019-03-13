@@ -23,10 +23,15 @@ statistics_quantitative(X,target_name), prints the main sample statistics along 
 2. One Sample Mean and Dispersion Analysis
 
 one_mean(df, # pandas dataframe
+        
         target_name, # target variable name
+        
         popmean, # population mean for used for null hypothesis
+        
         alpha=0.05, # significance level
+        
         nan='propagate' # nan policy
+        
         )
 
 The one sample Test of mean provides the main sample statistics plus boxplot, automatically tests the normality assumption and, if the assumption holds, it provides the Bayesian confidence intervals for the mean and the standard deviation and also performs the one sample t-test for the given population mean and significance level, reading out the results for further analysis by the Business Intelligence analyst.
@@ -35,11 +40,17 @@ The one sample Test of mean provides the main sample statistics plus boxplot, au
 3. Two Independent Samples Means and Dispersion Analysis
 
 two_means_indep(df, # pandas dataframe
+                
                 target_name, # name of target variable
+                
                 binary_variable, # binary variable name
+                
                 binary_categories, # binary variable categories
+                
                 alpha = 0.05, # significance level
+                
                 nan = 'propagate' # nan policy
+                
                 )
 
 The two independent samples means and dispersion analysis functionality provides the main sample statistics plus boxplot for the two independent samples, automatically tests the normality assumption and, if the assumption holds, it provides the confidence intervals for the mean and the standard deviation of each sample and also performs the Levene's test for equality of variances and the independent samples t-test for the equality of means, the later with the p-value already adapted to the equality of variances assumption. If the normality assumption does not hold, the system automatically performs the Mann-Whitney test of equality of distributions as the nonparametric alternative.
