@@ -32,6 +32,7 @@ from sklearn.metrics import mean_squared_error # mean square error metric
 from sklearn.metrics import mean_absolute_error # mean absolute error metric
 from sklearn.metrics import median_absolute_error # median absolute error metric
 
+
 def import_data(filename):  
     # convert to dataframe
     return pd.read_csv(filename)
@@ -60,9 +61,9 @@ def evaluate_normality_assumption(X,
         print("Normal test significance", round(p_value_normal,6))
     # return the assumption output for the procedures involving the parametric
     # tests
-    return assumption
-            
+    return assumption           
  
+    
 def statistics_quantitative(X,target_name):
     
     # printout main sample statistics along with skewness and kurtosis test
@@ -82,8 +83,6 @@ def statistics_quantitative(X,target_name):
     print("Kurtosis p-value", round(p_value_kurtosis,6))
     
     
-
-
 def one_mean(df, # pandas dataframe
              target_name, # target variable name
              popmean, # population mean
@@ -241,7 +240,6 @@ def two_means_indep(df, # pandas dataframe
     plt.show()
     
 
-
 def two_means_paired(df, # pandas dataframe
                      target_1, # name of  variable 1
                      target_2, # name of variable 2
@@ -260,7 +258,6 @@ def two_means_paired(df, # pandas dataframe
     statistics_quantitative(X_1,target_1)
     statistics_quantitative(X_2,target_2)
     statistics_quantitative(D,"Difference")
-    
       
     # evaluate the normality assumption
     assumption = evaluate_normality_assumption(D, 'Difference',nan)
@@ -336,15 +333,13 @@ def anova(df, # pandas dataframe
         # append array to samples
         X.append(X_i)
     
-    
     # printout the main sample statistics and evaluate normality 
     for i in range (0,num_variables):
         X_i = X[i]
         name = categories_classes[i]
         statistics_quantitative(X_i,name)
         assumption = evaluate_normality_assumption(X_i,name,nan)
-        assumptions.append(assumption)
-        
+        assumptions.append(assumption)    
     
     # apply ANOVA if normality assumption holds for all groups
     if False not in assumptions:
@@ -460,9 +455,6 @@ def proportions_test(df, # pandas dataframe
     print((1-alpha)*100, "% Clopper-Pearson confidence interval for proportion",
           "("+str(ci_low), str(ci_upp)+")")
     
-    
-    
-
 
 def linear_regression_analysis(df, # pandas dataframe
                                predictor_name, # name of predictor
@@ -475,7 +467,6 @@ def linear_regression_analysis(df, # pandas dataframe
     target = df_2[target_name].values
     
     slope, intercept, r_value, p_value, std_err = stats.linregress(predictor,target)
-    
     
     print("\nRegression Results")
     print("\nR^2:", r_value**2)
@@ -499,7 +490,6 @@ def linear_regression_analysis(df, # pandas dataframe
     plt.xlabel(predictor_name)
     plt.ylabel(target_name)
     plt.show()
-    
     
 
 def classification_problem(data, # pandas dataframe
@@ -611,7 +601,8 @@ def classification_problem(data, # pandas dataframe
         training_data_list = [X_train, y_train]
         test_data_list = [X_test, y_test]
         return architecture, training_data_list, test_data_list
-         
+    
+    
 def regression_problem(data, # pandas dataframe
                            predictors, # predictors name list
                            target, # target name
@@ -658,6 +649,7 @@ def regression_problem(data, # pandas dataframe
     print("Training sample:", median_absolute_error(y_train, y_pred_train))
     print("Test sample", median_absolute_error(y_test,y_pred_test))
 
+    
 def inference_proportions(df, # pandas dataframe
                           binary, # binary variable name
                           name_1, # binary counted as 1
@@ -670,6 +662,7 @@ def inference_proportions(df, # pandas dataframe
     ci_low, ci_upp = proportion_confint(num_1, N, alpha, method='beta')
     interval = (ci_low, ci_upp)
     return interval
+
 
 def inference_target_variable(df, # pandas dataframe
                               target_name, # target variable name
