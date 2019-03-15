@@ -125,7 +125,36 @@ The function outputs the total sample size, the training data size, the test dat
 
 The regression problem functionality is another machine learning function that is applied analogously to the classification_problem function but for a problem of regression instead of classification. Instead of the accuracies it produces for both training and test samples the Root Mean Square Error (RMSE), the Mean Absolute Error and the Median Absolute Error.
 
+8. Inference Functions
 
+The inference functions are usually used in class for the construction of rule-based AI systems that work with the Analytics Engine as an "inference engine", with the rules based on the confidence intervals as a decision basis. There are three functions defined here as we now describe.
+
+"inference_proportions"
+
+        inference_proportions(df, # pandas dataframe
+                             binary, # binary variable name
+                             name_1, # binary counted as 1
+                             alpha=0.05) # significance level
+
+This first function is used to build rule-based AI systems that use the Clopper-Pearson confidence interval for the proportion, the function returns the interval as a tuple.
+
+"inference_target_variable"
+
+        inference_target_variable(df, # pandas dataframe
+                                  target_name, # target variable name
+                                  alpha=0.05) # significance level
+
+This second function is used to build rule-based AI systems that use the confidence interval for the mean and/or the confidence interval for the standard deviation as a a basis for decision, the function returns both intervals as a tuple.
+
+"inference_target_category"
+
+        inference_target_category(df, # pandas dataframe
+                                  target_variable, # target variable name
+                                  target_category, # target category name
+                                  binary_variable, # binary variable name
+                                  alpha=0.05) # significance level
+                              
+This third function is used to build rule-based AI systems that use the confidence interval for the mean and/or the confidence interval for the standard deviation as a a basis for decision on a target quantitative variable given a specific value of a qualitative category, the function returns both intervals as a tuple (used in the framework of independent samples with the qualitative variable dividing the samples).
 
 
 
