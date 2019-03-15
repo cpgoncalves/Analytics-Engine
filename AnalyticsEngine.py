@@ -611,10 +611,7 @@ def classification_problem(data, # pandas dataframe
         training_data_list = [X_train, y_train]
         test_data_list = [X_test, y_test]
         return architecture, training_data_list, test_data_list
-
-        
-    
- 
+         
 def regression_problem(data, # pandas dataframe
                            predictors, # predictors name list
                            target, # target name
@@ -661,4 +658,39 @@ def regression_problem(data, # pandas dataframe
     print("Training sample:", median_absolute_error(y_train, y_pred_train))
     print("Test sample", median_absolute_error(y_test,y_pred_test))
 
+def inference_proportions(df, # pandas dataframe
+                          binary, # binary variable name
+                          name_1, # binary counted as 1
+                          alpha=0.05
+                          ):
+    # return Clopper-Pearson confidence interval for proportion
+    df_1 = df.loc[df[binary]==name_1]
+    num_1=len(df_1)
+    N=len(df)
+    ci_low, ci_upp = proportion_confint(num_1, N, alpha, method='beta')
+    interval = (ci_low, ci_upp)
+    return interval
 
+def inference_target_variable(df, # pandas dataframe
+                              target_name, # target variable name
+                              alpha=0.05, # significance level
+                              ):
+    # return the confidence intervals for the mean and standard deviation
+    # of a target variable
+    X=df[target_name].values
+    mean, var, std = stats.mvsdist(X)
+    return mean.interval(1-alpha), std.interval(1-alpha)
+    
+
+def inference_target_category(df, # pandas dataframe
+                              target_variable, # target variable name
+                              target_category, # target category name
+                              binary_variable, # binary variable name
+                              alpha=0.05 # significance level
+                              ):
+    # return the confidence intervals for the mean and standard deviation
+    # of a target variable
+    df_1 = df.loc[df[binary_variable]==target_category]
+    X = df_1[target_variable].values
+    mean, var, std = stats.mvsdist(X)
+    return mean.interval(1-alpha), std.interval(1-alpha)
