@@ -396,7 +396,7 @@ def anova(df, # pandas dataframe
         print("\nKruskal-Wallis Test")
         print("Test statistic", round(statistic_KW,6))
         print("p-value", round(p_value_KW,6))
-        if p_value > alpha:
+        if p_value_KW > alpha:
             print("\nDo not reject the null hypothesis")
         else:
             print("\nReject the null hypothesis")
