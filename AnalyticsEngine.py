@@ -363,7 +363,7 @@ def anova(df, # pandas dataframe
         if p_value_levene > alpha:
             print("Equal variances assumed by Levene test")
             print("Significance of Levene test", round(p_value_levene,6))
-            F, p_value = stats.f_oneway(*X)
+            statistic, p_value = stats.f_oneway(*X)
             
         else:
             print("\nEqual variances not assumed by Levene test")
