@@ -361,7 +361,7 @@ def anova(df, # pandas dataframe
         # apply the Levene and the t-test
         W, p_value_levene = stats.levene(*X)
         if p_value_levene > alpha:
-            print("Equal variances assumed by Levene test")
+            print("\nEqual variances assumed by Levene test")
             print("Significance of Levene test", round(p_value_levene,6))
             statistic, p_value = stats.f_oneway(*X)
             
