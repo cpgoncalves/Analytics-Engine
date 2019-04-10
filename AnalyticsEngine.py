@@ -687,3 +687,12 @@ def inference_target_category(df, # pandas dataframe
     X = df_1[target_variable].values
     mean, var, std = stats.mvsdist(X)
     return mean.interval(1-alpha), std.interval(1-alpha)
+
+def get_category(df, # pandas dataframe
+                 category_variable_name, # category variable name
+                 category_value): # category value
+    # return a dataframe from a parent dataframe with a specific value for a
+    # category variable
+    return df.loc[df[category_variable_name]==category_value]
+
+
