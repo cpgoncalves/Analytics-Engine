@@ -598,8 +598,8 @@ def classification_problem(data, # pandas dataframe
     
     # return training data, test data and the architecture if requested
     if return_elements == True:
-        training_data_list = [X_train, y_train]
-        test_data_list = [X_test, y_test]
+        training_data_list = [X_train, y_train, y_pred_train]
+        test_data_list = [X_test, y_test, y_pred_test]
         return architecture, training_data_list, test_data_list
     
     
