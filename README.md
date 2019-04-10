@@ -168,7 +168,7 @@ This function returns the Pandas dataframe for a given .csv file.
 
         get_category(df, # pandas dataframe
                      category_variable_name, # category variable name
-                     category_value): # category value
+                     category_value) # category value
 
 Given a dataframe, this function returns a new dataframe with the data corresponding to a given category variable's value
 
