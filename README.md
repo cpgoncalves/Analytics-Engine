@@ -156,6 +156,23 @@ This second function is used to build rule-based AI systems that use the confide
                               
 This third function is used to build rule-based AI systems that use the confidence interval for the mean and/or the confidence interval for the standard deviation as a a basis for decision on a target quantitative variable given a specific value of a qualitative category, the function returns both intervals as a tuple (used in the framework of independent samples with the qualitative variable dividing the samples).
 
+9. Data Handling
+
+"import_data"
+
+        import_data(filename):  
+
+This function returns the Pandas dataframe for a given .csv file.
+
+"get_category"
+
+        get_category(df, # pandas dataframe
+                     category_variable_name, # category variable name
+                      category_value): # category value
+
+Given a dataframe, this function returns a new dataframe with the data corresponding to a given category variable's value
+
+
 
 
 
