@@ -596,11 +596,11 @@ def classification_problem(data, # pandas dataframe
     print(accuracy_matrix_test)
     print("\nDistance:", distance_test)
     
-    # return training data, test data and the architecture if requested
+    # return training data, test data with predictions if requested
     if return_elements == True:
         training_data_list = [X_train, y_train, y_pred_train]
         test_data_list = [X_test, y_test, y_pred_test]
-        return architecture, training_data_list, test_data_list
+        return training_data_list, test_data_list
     
     
 def regression_problem(data, # pandas dataframe
@@ -610,7 +610,8 @@ def regression_problem(data, # pandas dataframe
                            randomize_data=True, # data randomization
                            training_p=0.5, # training data proportion
                            seed=1, # seed for random number generator
-                           n_shuffles=2 # number of times to shuffle
+                           n_shuffles=2, # number of times to shuffle
+                           return_elements=False # return elements
                            ):
     # data sample randomization if asked (default)
     if randomize_data == True:
@@ -648,6 +649,12 @@ def regression_problem(data, # pandas dataframe
     print("\nMedian Absolute Error")
     print("Training sample:", median_absolute_error(y_train, y_pred_train))
     print("Test sample", median_absolute_error(y_test,y_pred_test))
+    
+    # return training data, test data with predictions if requested
+    if return_elements == True:
+        training_data_list = [X_train, y_train, y_pred_train]
+        test_data_list = [X_test, y_test, y_pred_test]
+        return training_data_list, test_data_list
 
     
 def inference_proportions(df, # pandas dataframe
