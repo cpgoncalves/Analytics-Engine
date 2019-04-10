@@ -107,7 +107,7 @@ This is the basic linear regression for a target versus a single predictor with 
                                return_elements=False # return elements
                                )
 
-This is a basic function that applies machine learning to a classification problem using scikit-learn functionalities. A pandas dataframe is provided by the user, the predictor variables names list as well as the target variable name, the architecture is also provided by the user. By default the system randomizes the sample with two shuffles using the provided random number generator seed, the user can also apply a single shuffle or no randomization at all if the randomize data is set to False. The user defines the proportion of data to be used for training, with the remaining data being set aside for testing. If the option return elements is set to True (the default is False), then, the function returns the trained machine learning architecture, the training data and the test data.
+This is a basic function that applies machine learning to a classification problem using scikit-learn functionalities. A pandas dataframe is provided by the user, the predictor variables names list as well as the target variable name, the architecture is also provided by the user. By default the system randomizes the sample with two shuffles using the provided random number generator seed, the user can also apply a single shuffle or no randomization at all if the randomize data is set to False. The user defines the proportion of data to be used for training, with the remaining data being set aside for testing. If the option return elements is set to True (the default is False), then, the function returns the the training data and the test data with the machine learning predictions.
 
 The function outputs the total sample size, the training data size, the test data size, the prediction accuracy scores on the training and test data, the confusion and the prediction accuracy matrices build from the confusion matrices and containing the percentage of correct predictions for both training and test data, as well as the distance of these last two matrices from the identity matrix (which would represent perfect score in prediction for each class of the target.
 
@@ -123,7 +123,7 @@ The function outputs the total sample size, the training data size, the test dat
                            n_shuffles=2 # number of times to shuffle
                            )
 
-The regression problem functionality is another machine learning function that is applied analogously to the classification_problem function but for a problem of regression instead of classification. Instead of the accuracies it produces for both training and test samples the Root Mean Square Error (RMSE), the Mean Absolute Error and the Median Absolute Error.
+The regression problem functionality is another machine learning function that is applied analogously to the classification_problem function but for a problem of regression instead of classification. Instead of the accuracies it produces for both training and test samples the Root Mean Square Error (RMSE), the Mean Absolute Error and the Median Absolute Error. If the option return elements is set to True (the default is False), then, the function returns the the training data and the test data with the machine learning predictions.
 
 8. Inference Functions
 
